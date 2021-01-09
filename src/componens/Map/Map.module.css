@@ -1,0 +1,17 @@
+.maps__block{
+    max-width: 1150px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+
+    box-shadow: -1px 5px 33px 8px rgba(0, 0, 0, 0.2);
+}
+.maps {
+    max-width: 1150px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+width: 70vw;
+    height: 50vw;
+    box-shadow: -1px 5px 33px 8px rgba(0, 0, 0, 0.2);
+}

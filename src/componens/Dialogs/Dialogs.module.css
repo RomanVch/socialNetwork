@@ -1,0 +1,20 @@
+.Dialogs__block{
+    max-width: 1150px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+
+    box-shadow: -1px 5px 33px 8px rgba(0, 0, 0, 0.2);
+}
+.Dialogs__head{
+ display: flex;
+    justify-content: space-around;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+}
+
+.Dialogs__close{
+    border: 0px;
+    background: none;
+}

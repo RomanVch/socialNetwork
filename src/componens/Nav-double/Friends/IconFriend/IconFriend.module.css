@@ -1,0 +1,19 @@
+.Friends_img {
+  border-radius: 100px;
+  border: 2px solid rgb(104, 223, 104);
+  box-shadow: 0 0 7px #666;
+}
+.Friends__li {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin-bottom: 20px;
+}
+.Friends__ul {
+  padding-left:0px ;
+}
+.Friends_img___ofline{
+  border: 2px solid rgb(112, 112, 112);
+  box-shadow: 0 0 7px #666;
+  border-radius: 100px;
+}

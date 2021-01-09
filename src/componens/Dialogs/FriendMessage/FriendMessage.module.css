@@ -1,0 +1,28 @@
+.friendMessage__block{
+    background: rgba(239, 239, 239, 0.3);
+    display: flex;
+    padding-top: 20px;
+    padding-left: 45px;
+    justify-content: center;
+}
+
+.friendMessage__message{
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #e6ecf5;
+    margin-left: 30px;
+    width: 38vw;
+    text-align: start;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    font-size: 12px;
+    max-width: 900px;
+    margin-right: 30px;
+}
+
+.friendMessage__date{
+    text-align: end;
+    padding-right: 20px;
+    margin-right: 30px;
+}

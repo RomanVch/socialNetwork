@@ -1,0 +1,26 @@
+.navigation {
+    grid-area: n;
+    background-color: #edf2f6;
+  }
+
+  .ul {
+    padding-left: 20px;
+  }
+
+  .list {
+    list-style-type:none;
+    margin-top: 70px;
+    margin-right: 50px;
+  }
+  .list_link {
+    text-decoration: none;
+    color:white
+  }
+.activeNav svg{
+  fill: #ff5e3a;
+  box-shadow: #666666;
+}
+
+svg:hover{
+  fill: #ff886d;
+}

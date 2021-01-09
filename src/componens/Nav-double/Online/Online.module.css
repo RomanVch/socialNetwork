@@ -1,0 +1,13 @@
+.button {
+  border: none; 
+  outline: none;
+}
+.button_margin {
+  margin-right: 10px;
+}
+.online {
+  padding-bottom:10px;
+  padding-left:10px;
+  margin-top:75px;
+  border-bottom: 1px dashed #888da8;
+}

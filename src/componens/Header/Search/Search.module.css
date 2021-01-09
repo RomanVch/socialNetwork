@@ -1,0 +1,16 @@
+.Search__input {
+height: 100%;
+width: 350px;
+border:none;
+background-color: #adb2d1;
+color:#888da8;
+}
+.search__button{
+    background-color: none;
+    border: none;
+    
+    background-color: #888da8;
+    display: inline-block;
+    vertical-align: middle;
+    
+}

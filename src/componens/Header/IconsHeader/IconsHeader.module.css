@@ -1,0 +1,19 @@
+.iconsHeader{
+    display: flex;
+ margin:0 auto;
+ margin-top: 32px ;
+}
+.button{
+    background-color: #888da8;
+    border:0px;
+    margin-right: 30px;
+}
+
+.activeNav svg{
+    fill: #ff5e3a;
+    box-shadow: #666666;
+}
+
+svg:hover{
+    fill: #ff886d;
+}

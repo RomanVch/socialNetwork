@@ -1,0 +1,11 @@
+.Nav_double {
+    background-color: #edf2f6;
+    grid-area: hd;
+    
+    display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-between;
+  }
+.Friends__li{margin-bottom: 15px}
+  

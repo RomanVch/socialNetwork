@@ -1,0 +1,14 @@
+.FileBox__block{
+    max-width: 1150px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    box-shadow: -1px 5px 33px 8px rgba(0, 0, 0, 0.2);
+}
+.FileBox__flex_block{
+    display: flex;
+    justify-content: space-around;
+}
+.balance__price{
+    padding-left: 10px;
+}

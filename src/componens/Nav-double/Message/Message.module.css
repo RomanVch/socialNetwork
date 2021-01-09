@@ -1,0 +1,12 @@
+.message {
+  display: flex;	
+  justify-content: center;
+  border-top: 1px dashed #888da8;
+  padding-top: 20px;
+  background-color: #ff5e3a;
+}
+.button {
+  margin-bottom: 20px;
+  background-color: #ff5e3a;
+  border:none;
+}
