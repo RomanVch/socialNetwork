@@ -9,8 +9,7 @@ import {MessageBlockDialog} from "./MessageBlock/MessageBlockDialog";
 type propsType = {
     PropsFriend: Array<typePropsFriendObject>
     PropsMessage: any
-    addMessage:( id:string, time:string)=> void
-    upAddMessage:(addingPost:string)=> void
+    dispatch:(active:any)=>void
     txtMsg:string
 }
 
@@ -39,7 +38,9 @@ function Dialogs(props: any) {
                                 if (m.hasOwnProperty('you')) {
                                     return <YouMessage message={m.you} dates={m.data}/>
                                 } else if (m.hasOwnProperty('friend')) {
-                                    return <FriendMessage message={m.friend} dates={m.data} avatar={p.avatar}
+                                    return <FriendMessage message={m.friend}
+                                                          dates={m.data}
+                                                          avatar={p.avatar}
                                                           name={p.name}/>
                                 } else {
                                     return <div> пусто </div>;
@@ -47,7 +48,7 @@ function Dialogs(props: any) {
                             }
                         )}
                     <MessageBlockDialog PropsMessage={props.PropsMessage} setPropsMessage={setPropsMessage} id={p.id}
-                                        addMessage={props.addMessage} upAddMessage={props.upAddMessage} txtMsg={props.txtMsg} />
+                                        dispatch={props.dispatch} txtMsg={props.txtMsg} />
                 </div>
             )
         }

@@ -6,9 +6,8 @@ import {MessageType} from "../../redux/state";
 
 type propsType = {
     mediaMessage: Array<MessageType>;
-    addPostState: (addingPost: MessageType) => void
-    upPostState: (addingPost: string) => void
     textMessage:string
+    dispatch:(active:any)=>void
 }
 
 function Profile(props: propsType) {
@@ -21,7 +20,7 @@ function Profile(props: propsType) {
             avatar: "https://www.blexar.com/avatar.png",
             message: message,
         }
-        props.addPostState(posting)
+        props.dispatch({type:"ADD-POST",addingPost:posting})
     }
 
 
@@ -38,7 +37,7 @@ function Profile(props: propsType) {
 
         <section>
             <ImgMain/>
-            <BlockMessage addPost={addPost} upPostState={props.upPostState} textMessage={props.textMessage}/>
+            <BlockMessage addPost={addPost} dispatch={props.dispatch} textMessage={props.textMessage}/>
 
             {
 
