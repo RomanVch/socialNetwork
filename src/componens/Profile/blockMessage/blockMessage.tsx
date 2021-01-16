@@ -3,17 +3,17 @@ import clip from './img/clip.svg';
 import music from './img/music.svg';
 import send from './img/send.svg';
 import style from './blockMessage.module.css';
+import {addPostActionCreator, upPostStateActionCreator} from "../../../redux/state";
 
 type typeBlockMsg = {
-    addPost: any
     textMessage: string
     dispatch: (active: any) => void
 }
 
 function BlockMessage(props: typeBlockMsg) {
-    const [msg, setMsg] = useState("")
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        props.dispatch({type: "UP-POST-STATE", stringAddingPost: e.currentTarget.value})
+        debugger
+        props.dispatch(upPostStateActionCreator(e.currentTarget.value))
     }
     const onKeyPressHandler = (e: KeyboardEvent<HTMLInputElement>) => {
         if (e.key === "Enter") {
@@ -23,7 +23,7 @@ function BlockMessage(props: typeBlockMsg) {
     }
     const addMsg = () => {
 
-        props.addPost(props.textMessage)
+        props.dispatch(addPostActionCreator(props.textMessage))
 
     }
 

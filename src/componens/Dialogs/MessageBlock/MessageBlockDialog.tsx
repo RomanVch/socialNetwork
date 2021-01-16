@@ -3,6 +3,7 @@ import style from "./MessageBlockDialog.module.css";
 import clip from "../../Profile/blockMessage/img/clip.svg";
 import music from "../../Profile/blockMessage/img/music.svg";
 import send from "../../Profile/blockMessage/img/send.svg";
+import {addMessageActionCreator, upMessageActionCreator} from "../../../redux/state";
 
 type typeMessage = {
     id: string,
@@ -24,10 +25,10 @@ export function MessageBlockDialog(props: typeMessage) {
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         debugger
-        props.dispatch({type: "UP-MESSAGE-STATE", addingPost: e.currentTarget.value})
+        props.dispatch(upMessageActionCreator(e.currentTarget.value))
     }
         const addMessage = () => {
-            props.dispatch({type: "ADD-MESSAGE", id:props.id,time:today})
+            props.dispatch(addMessageActionCreator(props.id,today))
         }
 
         return (

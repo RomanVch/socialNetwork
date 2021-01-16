@@ -1,15 +1,19 @@
-const id1 = "1"
-const id2 = "2"
-const id3 = "3"
-const id4 = "4"
-const id5 = "5"
-const id6 = "6"
+import profileReducer, {ADDLIKE, ADDPOST, UPPOSTSTATE} from "./profile-reducer";
+import dialogReducer, {ADDMESSAGE, UPMESSAGESTATE} from "./dialog-reducer ";
+
+const id1 = "1",
+    id2 = "2",
+    id3 = "3",
+    id4 = "4",
+    id5 = "5",
+    id6 = "6"
+
 type typeText = {
     textPost: string
     textMessage: string
 }
 
-type typePost = {
+export type typePost = {
     id: number,
     name: string,
     like: number,
@@ -45,34 +49,36 @@ export type message = {
     friend?: string
 }
 export type TaskType = {
-    textPost: string
-    textMessage: string
+    text:{textPost: string
+    textMessage: string}
     post: Array<MessageType>
     PropsFriend: Array<typePropsFriendObject>
     PropsFriendMessage: any;
 }
 
 
-type PropsFriendMessage = {
+export type PropsFriendMessage = {
     you: string,
     data: string
 }
+type stateType ={
+    text: typeText,
+    post: Array<typePost>,
+    PropsFriend: Array<typePropsFriend>,
+    PropsFriendMessage: any,
+}
 export type typeStore = {
-    _state: {
-        text: typeText,
-        post: Array<typePost>,
-        PropsFriend: Array<typePropsFriend>,
-        PropsFriendMessage: any,
-    }
-    getState:any,
+    _state: stateType
+    getState: any,
     _callSubscriber: (state: any) => void,
     subscribe: (observer: any) => void,
-    dispatch:(action:any)=>void
+    dispatch: (action: any) => void
 }
+
 export const store: typeStore = {
     _state: {
         text: {
-            textPost: "wwewe",
+            textPost: "",
             textMessage: ""
         },
         post: [
@@ -253,7 +259,7 @@ export const store: typeStore = {
             ]
         },
     },
-    getState () {
+    getState() {
         return this._state
     },
     _callSubscriber(state: any) {
@@ -263,33 +269,23 @@ export const store: typeStore = {
         this._callSubscriber = observer
     },
 
-    dispatch(action: any) { //{type:"ADD-POST"}
+    dispatch(action: any) {
+        this._state = profileReducer(this._state, action)
+        this._state = dialogReducer(this._state, action)
+        this._callSubscriber(this._state)
 
-          if (action.type === "ADD-POST") {
-              this._state.post.unshift(action.addingPost)
-              this._state.text.textPost = ""
-              this._callSubscriber(this)
-          } else if (action.type === "UP-POST-STATE") {
-              debugger
-              this._state.text.textPost = action.stringAddingPost
-              this._callSubscriber(this)
-          } else if (action.type === "ADD-MESSAGE") {
-              const message = {
-                  you: this._state.text.textMessage,
-                  data: action.time
-              }
-              this._state.PropsFriendMessage[action.id].push(message)
-              this._state.text.textMessage = ""
-              this._callSubscriber(this)
-          } else if (action.type === "UP-MESSAGE-STATE") {
-              this._state.text.textMessage = action.addingPost
-              console.log(this._state.text.textMessage)
-              this._callSubscriber(this)
-          }
-      },
+    }
 }
-
-
-
-
-
+export const addPostActionCreator = (message: string) => ({type: ADDPOST, message: message})
+export const upPostStateActionCreator = (editString: string) => {
+    debugger
+   return {type: UPPOSTSTATE, stringAddingPost: editString}
+    }
+export const addMessageActionCreator = (id: string, time: string) => ({type: ADDMESSAGE, id: id, time: time})
+export const upMessageActionCreator = (editString: string) => ({type: UPMESSAGESTATE, addingPost: editString})
+export const addLikeActionCreator = (like: number, propsLike: number, setLike: any) => ({
+    type: ADDLIKE,
+    like: like,
+    propsLike: propsLike,
+    setLike: setLike
+})
