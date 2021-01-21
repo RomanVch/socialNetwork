@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import BlockMessage from './blockMessage/blockMessage';
 import Chat from './Chat/Chat';
 import ImgMain from './imgMain/imgMain';
-import {MessageType,addPostActionCreator} from "../../redux/state";
+import {MessageType,addPostActionCreator} from "../../redux/store";
 
 type propsType = {
     mediaMessage: Array<MessageType>;

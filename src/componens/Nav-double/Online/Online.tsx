@@ -2,7 +2,7 @@ import React from 'react';
 import style from'./Online.module.css';
 import offline from "./img/offline.svg";
 import online from "./img/online.svg";
-import { typePropsFriendObject} from "../../../redux/state";
+import { typePropsFriendObject} from "../../../redux/store";
 type OnlineType ={
     PropsFriend:Array<typePropsFriendObject>
     setFriend:any

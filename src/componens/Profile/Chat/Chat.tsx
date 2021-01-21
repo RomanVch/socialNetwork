@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import style from './Chat.module.css';
 import heart from './img/heart.svg'
-import {addLikeActionCreator} from "../../../redux/state";
+import {addLikeActionCreator} from "../../../redux/store";
 
 
 type propsType = {

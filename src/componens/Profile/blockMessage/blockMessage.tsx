@@ -3,7 +3,7 @@ import clip from './img/clip.svg';
 import music from './img/music.svg';
 import send from './img/send.svg';
 import style from './blockMessage.module.css';
-import {addPostActionCreator, upPostStateActionCreator} from "../../../redux/state";
+import {addPostActionCreator, upPostStateActionCreator} from "../../../redux/store";
 
 type typeBlockMsg = {
     textMessage: string

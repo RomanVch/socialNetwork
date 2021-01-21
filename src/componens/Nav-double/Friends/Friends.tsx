@@ -1,7 +1,7 @@
 import React from "react";
 import style from'./Friends.module.css';
 import {IconFriend} from './IconFriend/IconFriend'
-import {typePropsFriendObject} from "../../../redux/state";
+import {typePropsFriendObject} from "../../../redux/store";
 type propsType ={
     PropsFriend:Array<typePropsFriendObject>
     friend:Array<typePropsFriendObject>

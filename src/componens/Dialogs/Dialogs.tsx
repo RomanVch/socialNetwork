@@ -3,7 +3,7 @@ import YouMessage from "./YouMessage/YouMessage";
 import FriendMessage from "./FriendMessage/FriendMessage";
 import close from "./img/close.svg";
 import style from "./Dialogs.module.css"
-import {typePropsFriendObject} from "../../redux/state";
+import {typePropsFriendObject} from "../../redux/store";
 import {MessageBlockDialog} from "./MessageBlock/MessageBlockDialog";
 
 type propsType = {

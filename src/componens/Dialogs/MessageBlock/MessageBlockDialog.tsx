@@ -3,7 +3,7 @@ import style from "./MessageBlockDialog.module.css";
 import clip from "../../Profile/blockMessage/img/clip.svg";
 import music from "../../Profile/blockMessage/img/music.svg";
 import send from "../../Profile/blockMessage/img/send.svg";
-import {addMessageActionCreator, upMessageActionCreator} from "../../../redux/state";
+import {addMessageActionCreator, upMessageActionCreator} from "../../../redux/store";
 
 type typeMessage = {
     id: string,

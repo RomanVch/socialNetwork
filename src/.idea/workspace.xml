@@ -11,15 +11,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de8173c7-fbd7-4faf-b593-c3223e685e8d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/componens/Dialogs/MessageBlock/MessageBlockDialog.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/componens/Dialogs/MessageBlock/MessageBlockDialog.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/componens/Nav-double/Nav-double.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/componens/Nav/img/menu.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redux/state.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redux/redux-store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/componens/Dialogs/Dialogs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/componens/Dialogs/Dialogs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/componens/Dialogs/MessageBlock/MessageBlockDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/componens/Dialogs/MessageBlock/MessageBlockDialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/componens/Header/IconsHeader/IconsHeader.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/componens/Header/IconsHeader/IconsHeader.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/componens/Nav-double/Friends/Friends.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/componens/Nav-double/Friends/Friends.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/componens/Nav-double/Nav-double.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/componens/Nav-double/Nav-double.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/componens/Nav-double/Online/Online.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/componens/Nav-double/Online/Online.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/componens/Profile/Chat/Chat.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/componens/Profile/Chat/Chat.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/componens/Profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/componens/Profile/Profile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/componens/Profile/blockMessage/blockMessage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/componens/Profile/blockMessage/blockMessage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redux/dialog-reducer .ts" beforeDir="false" afterPath="$PROJECT_DIR$/redux/dialog-reducer .ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redux/profile-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/redux/profile-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redux/state.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,8 +55,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/componens/Dialogs/FriendMessage" />
+    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Roaming/npm/csscomb.cmd" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -71,6 +81,9 @@
       <workItem from="1608214486778" duration="719000" />
       <workItem from="1608277409237" duration="6819000" />
       <workItem from="1609417882801" duration="27929000" />
+      <workItem from="1610866213209" duration="1790000" />
+      <workItem from="1611229779471" duration="1078000" />
+      <workItem from="1611231352614" duration="1239000" />
     </task>
     <servers />
   </component>
@@ -90,17 +103,57 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1800" y="407" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1610873133510">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1800" y="407" key="#com.intellij.ide.macro.MacrosDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1610873133510" />
     <state x="1009" y="445" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608214533864">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1009" y="445" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1608214533864" />
-    <state x="987" y="433" width="585" height="534" key="find.popup" timestamp="1607591268534">
+    <state x="1687" y="532" width="668" height="499" key="#com.intellij.tools.ToolEditorDialog" timestamp="1610873395623">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="987" y="433" width="585" height="534" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1607591268534" />
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1609480214177">
+    <state x="1687" y="532" width="668" height="499" key="#com.intellij.tools.ToolEditorDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1610873395623" />
+    <state x="1800" y="457" key="FileChooserDialogImpl" timestamp="1610873183249">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1609480214177" />
+    <state x="1800" y="457" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1610873183249" />
+    <state width="1105" height="399" key="GridCell.Tab.0.bottom" timestamp="1610875920859">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1105" height="399" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1610875920859" />
+    <state width="1105" height="399" key="GridCell.Tab.0.center" timestamp="1610875920859">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1105" height="399" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1610875920859" />
+    <state width="1105" height="399" key="GridCell.Tab.0.left" timestamp="1610875920859">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1105" height="399" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1610875920859" />
+    <state width="1105" height="399" key="GridCell.Tab.0.right" timestamp="1610875920859">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1105" height="399" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1610875920859" />
+    <state x="1420" y="347" key="SettingsEditor" timestamp="1610873396798">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1420" y="347" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1610873396798" />
+    <state x="92" y="92" width="2376" height="1216" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1611230797298">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="92" y="92" width="2376" height="1216" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1611230797298" />
+    <state x="881" y="309" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1611230546048">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="881" y="309" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1611230546048" />
+    <state x="1344" y="417" width="585" height="534" key="find.popup" timestamp="1611230665567">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1344" y="417" width="585" height="534" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1611230665567" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1610873058199">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1610873058199" />
   </component>
 </project>

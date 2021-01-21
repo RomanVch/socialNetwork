@@ -3,7 +3,7 @@ import style from './Nav_double.module.css';
 import Friends from '../Nav-double/Friends/Friends';
 import Online from '../Nav-double/Online/Online';
 import Message from './Message/Message';
-import {typePropsFriendObject} from "../../redux/state";
+import {typePropsFriendObject} from "../../redux/store";
 
 type propsType={
     PropsFriend:Array<typePropsFriendObject>
