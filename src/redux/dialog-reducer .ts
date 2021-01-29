@@ -170,11 +170,17 @@ let initialState = {
 
 
 const dialogReducer = (state:friendMessageType = initialState ,action:any): any => {
-    switch (action.type) {
+    let today: any = new Date();
+    const dd = String(today.getDate()).padStart(2, '0');
+    const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    let yyyy = today.getFullYear();
+    yyyy = yyyy.toString().substr(-2);
+    today = dd + '.' + mm + '.' + yyyy;
+     switch (action.type) {
         case ADDMESSAGE:
             const message = {
                 you: state.textMessage,
-                data: action.time
+                data: today
             }
             state.PropsFriendMessage[action.id].push(message)
             state.textMessage = "";

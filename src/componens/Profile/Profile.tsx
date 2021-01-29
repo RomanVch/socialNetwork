@@ -3,6 +3,7 @@ import BlockMessage from './blockMessage/blockMessage';
 import Chat from './Chat/Chat';
 import ImgMain from './imgMain/imgMain';
 import {MessageType,addPostActionCreator} from "../../redux/store";
+import BlockMessageContainer from "./blockMessage/blockMessageСontainer";
 
 type propsType = {
     mediaMessage: Array<MessageType>;
@@ -19,7 +20,7 @@ function Profile(props: propsType) {
 
         <section>
             <ImgMain/>
-            <BlockMessage  dispatch={props.dispatch} textMessage={props.textMessage}/>
+            <BlockMessageContainer  dispatch={props.dispatch} textMessage={props.textMessage}/>
 
             {
 

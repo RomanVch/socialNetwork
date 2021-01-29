@@ -11,24 +11,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de8173c7-fbd7-4faf-b593-c3223e685e8d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/redux/redux-store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/componens/Dialogs/MessageBlock/MessageBlockDialogContainer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/componens/Profile/blockMessage/blockMessageСontainer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/componens/Dialogs/Dialogs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/componens/Dialogs/Dialogs.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/componens/Dialogs/MessageBlock/MessageBlockDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/componens/Dialogs/MessageBlock/MessageBlockDialog.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/componens/Header/IconsHeader/IconsHeader.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/componens/Header/IconsHeader/IconsHeader.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/componens/Nav-double/Friends/Friends.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/componens/Nav-double/Friends/Friends.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/componens/Nav-double/Nav-double.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/componens/Nav-double/Nav-double.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/componens/Nav-double/Online/Online.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/componens/Nav-double/Online/Online.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/componens/Profile/Chat/Chat.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/componens/Profile/Chat/Chat.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/componens/Profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/componens/Profile/Profile.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/componens/Profile/blockMessage/blockMessage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/componens/Profile/blockMessage/blockMessage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/redux/dialog-reducer .ts" beforeDir="false" afterPath="$PROJECT_DIR$/redux/dialog-reducer .ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redux/profile-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/redux/profile-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redux/state.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redux/redux-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/redux/redux-store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/redux/store.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +47,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Roaming/npm/csscomb.cmd" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/componens/Dialogs/MessageBlock" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
@@ -63,6 +55,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Roman\Desktop\it-incubator\it-incubator\socialNetwork\src\componens\Dialogs\MessageBlock" />
+      <recent name="C:\Users\Roman\Desktop\it-incubator\it-incubator\socialNetwork\src\componens\Profile\blockMessage" />
       <recent name="C:\Users\Roman\Desktop\it-incubator\it-incubator\TS-react2\my-app\src\componens\Dialogs\FriendMessage" />
       <recent name="C:\Users\Roman\Desktop\it-incubator\it-incubator\TS-react2\my-app\src\componens\Dialogs\YouMessage" />
     </key>
@@ -84,6 +78,7 @@
       <workItem from="1610866213209" duration="1790000" />
       <workItem from="1611229779471" duration="1078000" />
       <workItem from="1611231352614" duration="1239000" />
+      <workItem from="1611918194715" duration="6405000" />
     </task>
     <servers />
   </component>
@@ -155,5 +150,16 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1610873058199" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/componens/Profile/blockMessage/blockMessageСontainer.tsx</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

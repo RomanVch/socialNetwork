@@ -5,6 +5,7 @@ import close from "./img/close.svg";
 import style from "./Dialogs.module.css"
 import {typePropsFriendObject} from "../../redux/store";
 import {MessageBlockDialog} from "./MessageBlock/MessageBlockDialog";
+import {MessageBlockDialogContainer} from "./MessageBlock/MessageBlockDialogContainer";
 
 type propsType = {
     PropsFriend: Array<typePropsFriendObject>
@@ -47,7 +48,7 @@ function Dialogs(props: any) {
                                 }
                             }
                         )}
-                    <MessageBlockDialog PropsMessage={props.PropsMessage} setPropsMessage={setPropsMessage} id={p.id}
+                    <MessageBlockDialogContainer PropsMessage={props.PropsMessage} setPropsMessage={setPropsMessage} id={p.id}
                                         dispatch={props.dispatch} txtMsg={props.txtMsg} />
                 </div>
             )

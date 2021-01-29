@@ -289,7 +289,7 @@ export const upPostStateActionCreator = (editString: string) => {
     debugger
     return {type: UPPOSTSTATE, stringAddingPost: editString}
 }
-export const addMessageActionCreator = (id: string, time: string) => ({type: ADDMESSAGE, id: id, time: time})
+export const addMessageActionCreator = (id: string) => ({type: ADDMESSAGE, id: id})
 export const upMessageActionCreator = (editString: string) => ({type: UPMESSAGESTATE, addingPost: editString})
 export const addLikeActionCreator = (like: number, propsLike: number, setLike: any) => ({
     type: ADDLIKE,
