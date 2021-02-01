@@ -1,18 +1,32 @@
 import React, {useState, ChangeEvent} from 'react';
-import style from "./MessageBlockDialog.module.css";
-import clip from "../../Profile/blockMessage/img/clip.svg";
-import music from "../../Profile/blockMessage/img/music.svg";
-import send from "../../Profile/blockMessage/img/send.svg";
 import {addMessageActionCreator, upMessageActionCreator} from "../../../redux/store";
 import {MessageBlockDialog} from "./MessageBlockDialog";
+import {connect} from "react-redux"
+import {Dispatch} from "redux";
+import {AppStateType} from "../../../redux/redux-store";
 
-type typeMessage = {
-    id: string,
-    PropsMessage: any,
-    setPropsMessage: (PropsMessage: any) => void
-    dispatch: (active: any) => void
-    txtMsg: string
-}
+
+
+
+
+
+
+/*export function MessageBlockDialogContainer(props: typeMessage) {
+
+
+    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        debugger
+        props.dispatch(upMessageActionCreator(e.currentTarget.value))
+    }
+    const addMessage = () => {
+        props.dispatch(addMessageActionCreator(props.id))
+    }
+
+    return (
+        <MessageBlockDialog onChangeHandler={onChangeHandler} addMessage={addMessage} txtMsg={props.txtMsg}/>
+    );
+}*/
+
 type OwnPropsType = {
     id?: string
 }
@@ -28,18 +42,25 @@ type MDTPType = {
 
 export type MessageBlockPropsType = OwnPropsType & MSTPType & MDTPType
 
-export function MessageBlockDialogContainer(props: typeMessage) {
-
-
-    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        debugger
-        props.dispatch(upMessageActionCreator(e.currentTarget.value))
+let mapStateProps = (state: AppStateType): MSTPType => {
+    return {
+        txtMsg: state.friendMessage.textMessage
     }
-    const addMessage = () => {
-        props.dispatch(addMessageActionCreator(props.id))
-    }
+}
 
-    return (
-        <MessageBlockDialog onChangeHandler={onChangeHandler} addMessage={addMessage} txtMsg={props.txtMsg}/>
-    )
-};
+let mapDispatch = (dispatch: Dispatch): MDTPType => {
+    return {
+        onChangeHandler: (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch(upMessageActionCreator(e.currentTarget.value))
+        },
+        addMessage: (id: string) => {
+            debugger
+            dispatch(addMessageActionCreator(id))
+        }
+    }
+}
+
+
+
+export const SuperMessageBlockDialogContainer = connect<MSTPType, MDTPType, {}, AppStateType>(mapStateProps,mapDispatch)(MessageBlockDialog)
+

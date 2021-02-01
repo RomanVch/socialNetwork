@@ -10,7 +10,6 @@ import Maps from './componens/Map/Map';
 import {BrowserRouter, Route} from "react-router-dom";
 import Balance from "./componens/Balance/Balance";
 import FileBox from "./componens/FileBox/FileBox";
-import {typeStore} from "./redux/store";
 
 
 type propsType= {

@@ -11,16 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de8173c7-fbd7-4faf-b593-c3223e685e8d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/componens/Dialogs/MessageBlock/MessageBlockDialogContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/componens/Profile/blockMessage/blockMessageСontainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/componens/Dialogs/Dialogs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/componens/Dialogs/Dialogs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/componens/Dialogs/MessageBlock/MessageBlockDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/componens/Dialogs/MessageBlock/MessageBlockDialog.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/componens/Profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/componens/Profile/Profile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/componens/Profile/blockMessage/blockMessage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/componens/Profile/blockMessage/blockMessage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redux/dialog-reducer .ts" beforeDir="false" afterPath="$PROJECT_DIR$/redux/dialog-reducer .ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redux/redux-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/redux/redux-store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/redux/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/componens/Dialogs/MessageBlock/MessageBlockDialogContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/componens/Dialogs/MessageBlock/MessageBlockDialogContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +74,7 @@
       <workItem from="1611229779471" duration="1078000" />
       <workItem from="1611231352614" duration="1239000" />
       <workItem from="1611918194715" duration="6405000" />
+      <workItem from="1611940366799" duration="49000" />
     </task>
     <servers />
   </component>
@@ -156,7 +152,6 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/componens/Profile/blockMessage/blockMessageСontainer.tsx</url>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

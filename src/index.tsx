@@ -2,18 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 import {store} from "./redux/redux-store";
+import {BrowserRouter} from "react-router-dom";
+import {Provider} from "react-redux"
 
-export let rerenderEntierTree=()=>{
+
+
     ReactDOM.render(
-        <React.StrictMode>
+        <BrowserRouter>
+            <Provider store={store}>
             <App  store={store} dispatch={store.dispatch.bind(store)}/>
-        </React.StrictMode>,
+            </Provider>
+        </BrowserRouter>,
         document.getElementById('root')
     );
-}
-reportWebVitals();
-rerenderEntierTree()
-store.subscribe(rerenderEntierTree)
-reportWebVitals();
+
+
+

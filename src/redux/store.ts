@@ -284,7 +284,7 @@ export const store: typeStore = {
 
     }
 }
-export const addPostActionCreator = (message: string) => ({type: ADDPOST, message: message})
+export const addPostActionCreator = () => ({type: ADDPOST})
 export const upPostStateActionCreator = (editString: string) => {
     debugger
     return {type: UPPOSTSTATE, stringAddingPost: editString}

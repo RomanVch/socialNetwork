@@ -3,7 +3,9 @@ import BlockMessage from './blockMessage/blockMessage';
 import Chat from './Chat/Chat';
 import ImgMain from './imgMain/imgMain';
 import {MessageType,addPostActionCreator} from "../../redux/store";
-import BlockMessageContainer from "./blockMessage/blockMessageСontainer";
+import {MessageBlockContainers} from "./blockMessage/blockMessageСontainer";
+import {useSelector} from "react-redux";
+import {AppStateType} from "../../redux/redux-store";
 
 type propsType = {
     mediaMessage: Array<MessageType>;
@@ -14,17 +16,17 @@ type propsType = {
 function Profile(props: propsType) {
 
 
-
+     const mediaMessage = useSelector<AppStateType, MessageType[]>(state=>state.post.postes)
 
     return (
 
         <section>
             <ImgMain/>
-            <BlockMessageContainer  dispatch={props.dispatch} textMessage={props.textMessage}/>
+            <MessageBlockContainers/>
 
             {
 
-                props.mediaMessage.map((p) => {
+                mediaMessage.map((p) => {
                     return <Chat key={p.id} mediaMessage={p} dispatch={props.dispatch}/>
                 })
             }

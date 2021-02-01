@@ -31,25 +31,27 @@ let initialState = {
     ],
 }
 
-const profileReducer = (state: TaskType = initialState, action: any): any => {
+const profileReducer = (state: TaskType = initialState, action: any): TaskType => {
     switch (action.type) {
-        case ADDPOST:
+        case ADDPOST: {
             const posting = {
                 id: state.postes[0].id + 1,
                 name: "Константин",
                 like: 0,
                 avatar: "https://www.blexar.com/avatar.png",
-                message: action.message,
+                message: state.textPost,
             }
-            state.postes.unshift(posting)
-            state.textPost = "";
-            return state;
-
-        case UPPOSTSTATE:
-            state.textPost = action.stringAddingPost;
-            console.log(state.textPost);
-            return state;
-
+            let newState = {...state}
+            newState.postes = [posting,...newState.postes]
+            newState.textPost = "";
+            return newState;
+        }
+        case UPPOSTSTATE: {
+            let newState = {...state}
+            newState.textPost = action.stringAddingPost;
+            console.log(newState.textPost);
+            return newState;
+        }
         case ADDLIKE:
             action.like === action.propsLike ? action.setLike(action.like + 1) : action.setLike(action.like - 1)
             return state

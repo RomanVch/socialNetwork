@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import style from './Chat.module.css';
 import heart from './img/heart.svg'
 import {addLikeActionCreator} from "../../../redux/store";
+import {connect} from "react-redux";
+import {AppStateType} from "../../../redux/redux-store";
 
 
 type propsType = {
@@ -40,3 +42,12 @@ const Fun = ()=> {
 };
 
 export default Chat
+
+const MapStateConnetct = (state:AppStateType)=>{
+    return
+
+}
+const MapDispatchConnetct = ()=>{}
+
+
+const ChatConteiner=connect()(Chat)

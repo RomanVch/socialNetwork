@@ -22,7 +22,7 @@ export function MessageBlockDialog(props: MessageBlockPropsType) {
                     <button type="button" className={style.dialogs__block_message_button}><img width="40px"
                                                                                                height="40px"
                                                                                                src={music}/></button>
-                    <button type="button" onClick={props.addMessage} className={style.dialogs__block_message_button}><img
+                    <button type="button" onClick={props.addMessage(props.id)} className={style.dialogs__block_message_button}><img
                         width="40px" height="40px" src={send}/></button>
                 </div>
                 <img className="cococo__avatar cococo__avatar--message" width="80px" height="80px"
