@@ -51,6 +51,7 @@ let mapStateProps = (state: AppStateType): MSTPType => {
 let mapDispatch = (dispatch: Dispatch): MDTPType => {
     return {
         onChangeHandler: (e: ChangeEvent<HTMLInputElement>) => {
+            debugger
             dispatch(upMessageActionCreator(e.currentTarget.value))
         },
         addMessage: (id: string) => {

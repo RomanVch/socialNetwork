@@ -1,15 +1,16 @@
 import React from 'react';
 import './App.css';
 import './normalize.css';
-import Profile from './componens/Profile/Profile';
 import Header from './componens/Header/Header';
 import Nav from './componens/Nav/Nav';
-import NavDouble from './componens/Nav-double/Nav-double';
-import Dialogs from './componens/Dialogs/Dialogs';
 import Maps from './componens/Map/Map';
 import {BrowserRouter, Route} from "react-router-dom";
 import Balance from "./componens/Balance/Balance";
 import FileBox from "./componens/FileBox/FileBox";
+import {DialogsContainer} from "./componens/Dialogs/DialogsContainer";
+import {ProfileContainer} from "./componens/Profile/ProfileContainer";
+import {NavdoubleContainer} from "./componens/Nav-double/Nav-doubleContainer";
+import {UsersContainer} from "./componens/users/UsersContainer";
 
 
 type propsType= {
@@ -26,20 +27,15 @@ function App(props:propsType) {
             <Header/>
             <Nav/>
             <div className="content">
-            <Route path="/profile" render={()=>{ return <Profile
-                dispatch={props.dispatch}
-                mediaMessage={props.store.getState().post.postes}
-                textMessage={props.store.getState().post.textPost}/>}}/>
-            <Route path="/dialogs" render={()=>{ return <Dialogs
-                dispatch={props.dispatch}
-                PropsFriend={props.store.getState().friendMessage.PropsFriend}
-                PropsMessage={props.store.getState().friendMessage.PropsFriendMessage}
-                txtMsg={props.store.getState().friendMessage.textMessage}/>}}/>
+            <Route path="/profile" render={()=><ProfileContainer/>}/>
+            <Route path="/dialogs/:id" render={()=> <DialogsContainer/>}/>
             <Route path="/maps" render={()=><Maps/>}/>
             <Route path="/balance" render={()=><Balance/>}/>
             <Route path="/fileBox" render={()=><FileBox/>}/>
+            <Route path="/users" render={()=><UsersContainer/>}/>
             </div>
-            <NavDouble PropsFriend={props.store.getState().friendMessage.PropsFriend}/>
+
+            <NavdoubleContainer/>
         </div>
         </BrowserRouter>
     );

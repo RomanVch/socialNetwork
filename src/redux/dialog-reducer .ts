@@ -1,4 +1,4 @@
-import {friendMessageType, TaskType} from "./store";
+import {friendMessageType} from "./store";
 
  export const ADDMESSAGE = "ADD-MESSAGE",
     UPMESSAGESTATE = "UP-MESSAGE-STATE"
@@ -186,14 +186,12 @@ const dialogReducer = (state:friendMessageType = initialState ,action:any): any 
                 you: state.textMessage,
                 data: time()
             }
-            let newState={...state,...state.PropsFriendMessage}
+            let newState={...state}
             newState.PropsFriendMessage[action.id].push(message)
             newState.textMessage = "";
             return newState;}
         case UPMESSAGESTATE:
-            let newState={...state}
-            newState.textMessage = action.addingPost
-            return newState
+            return {...state,textMessage:action.addingPost}
         default:
             return state
 

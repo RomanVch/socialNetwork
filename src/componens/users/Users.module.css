@@ -1,0 +1,19 @@
+.usersImg{
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+}
+.usersBlockAvatar{
+  display: flex;
+  flex-direction: column;
+}
+.usersBlock{
+  display: flex;
+}
+.usersBlockInfo{
+  display: flex;
+}
+.usersBlockName{
+  margin-right: 100%;
+  margin-left: 10%;
+}

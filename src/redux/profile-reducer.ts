@@ -41,16 +41,12 @@ const profileReducer = (state: TaskType = initialState, action: any): TaskType =
                 avatar: "https://www.blexar.com/avatar.png",
                 message: state.textPost,
             }
-            let newState = {...state}
-            newState.postes = [posting,...newState.postes]
+            let newState = {...state,postes:[posting,...state.postes]}
             newState.textPost = "";
             return newState;
         }
         case UPPOSTSTATE: {
-            let newState = {...state}
-            newState.textPost = action.stringAddingPost;
-            console.log(newState.textPost);
-            return newState;
+            return {...state,textPost:action.stringAddingPost};
         }
         case ADDLIKE:
             action.like === action.propsLike ? action.setLike(action.like + 1) : action.setLike(action.like - 1)

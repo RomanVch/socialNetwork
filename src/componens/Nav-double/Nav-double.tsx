@@ -4,16 +4,18 @@ import Friends from '../Nav-double/Friends/Friends';
 import Online from '../Nav-double/Online/Online';
 import Message from './Message/Message';
 import {typePropsFriendObject} from "../../redux/store";
+import {OnlineContainer} from "./Online/OnlineContainer";
+import {FriendsContainer} from "./Friends/FriendsContainer";
 
 type propsType={
-    PropsFriend:Array<typePropsFriendObject>
+    PropsFriend:typePropsFriendObject[]
 }
-function NavDouble (props:propsType) {
+function NavDouble (props:any) {
     const [friend,setFriend] = useState(props.PropsFriend)
     return (
 <div className={style.Nav_double}>
-    <Online PropsFriend={props.PropsFriend} setFriend={setFriend}/>
-    <Friends PropsFriend={props.PropsFriend} friend={friend}/>
+    <OnlineContainer setFriend={setFriend}/>
+    <FriendsContainer  friend={friend}/>
 <Message/>
 </div>
     )

@@ -16,7 +16,7 @@ type propsType = {
 function Profile(props: propsType) {
 
 
-     const mediaMessage = useSelector<AppStateType, MessageType[]>(state=>state.post.postes)
+
 
     return (
 
@@ -26,7 +26,7 @@ function Profile(props: propsType) {
 
             {
 
-                mediaMessage.map((p) => {
+                props.mediaMessage.map((p) => {
                     return <Chat key={p.id} mediaMessage={p} dispatch={props.dispatch}/>
                 })
             }

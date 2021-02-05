@@ -8,6 +8,7 @@ import {MessageBlockDialog} from "./MessageBlock/MessageBlockDialog";
 import {
     SuperMessageBlockDialogContainer
 } from "./MessageBlock/MessageBlockDialogContainer";
+import {MSPtype} from "./DialogsContainer";
 
 type propsType = {
     PropsFriend: Array<typePropsFriendObject>
@@ -20,15 +21,7 @@ type typeBlockMsg = {
     addPost: any
 }
 
-function Dialogs(props: any) {
-
-
-    const [PropsMessage, setPropsMessage] = useState(props.PropsMessage);
-
-
-    const actualDialogs = (id: any, messagee: any) => {
-        return { ...PropsMessage,[id]:messagee}
-    }
+function Dialogs(props: MSPtype) {
 
     const renderDialogs = props.PropsFriend.map((p: any) => {
         if (window.location.pathname === "/dialogs/" + p.id) {
