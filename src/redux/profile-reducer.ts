@@ -2,7 +2,8 @@ import {TaskType} from "./store";
 
 export const ADDPOST = "ADD-POST",
     UPPOSTSTATE = "UP-POST-STATE",
-    ADDLIKE = "ADD-LIKE"
+    ADDLIKE = "ADD-LIKE",
+    SET_USER_PROFILE="SET_USER_PROFILE"
 
 let initialState = {
     textPost: "",
@@ -29,6 +30,7 @@ let initialState = {
             message: "Привет"
         }
     ],
+    profile:{}
 }
 
 const profileReducer = (state: TaskType = initialState, action: any): TaskType => {
@@ -51,9 +53,14 @@ const profileReducer = (state: TaskType = initialState, action: any): TaskType =
         case ADDLIKE:
             action.like === action.propsLike ? action.setLike(action.like + 1) : action.setLike(action.like - 1)
             return state
+        case SET_USER_PROFILE:
+             return {...state,profile:action.profile}
+
         default:
             return state
 
     }
 }
+
+export const setUserProfileAC=(profile:any)=>({type:SET_USER_PROFILE,profile})
 export default profileReducer

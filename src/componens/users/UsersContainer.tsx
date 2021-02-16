@@ -51,9 +51,7 @@ this.props.toggleIsFetching(true)
     render() {
 
         return (<>
-                <>
                 {this.props.isFetching?<Preloader/>:null}
-                </>
                 <Users
                 onPageChanged={this.onPageChanged}
                 totalUsersCount={this.props.totalUsersCount}

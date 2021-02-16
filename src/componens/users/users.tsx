@@ -1,6 +1,7 @@
 import React from "react";
 import s from "./Users.module.css";
 import avatarDefolt from "../../img/defoltAvatar.png";
+import {NavLink} from "react-router-dom";
 
 type usersTypes = {
     name: string,
@@ -27,7 +28,6 @@ export let Users = (props:any) => {
     return <div>
         <div>
             {pages.map(p => {
-                console.log(1)
                 return <button onClick={(e) => {
                     props.onPageChanged(p)
                 }} className={props.currentPage === p ? s.active : ""}>{p}</button>
@@ -36,10 +36,11 @@ export let Users = (props:any) => {
         <div>{
             props.users.map((u: usersTypes) => <div className={s.usersBlock} key={u.id}>
                 <div className={s.usersBlockAvatar}>
-                    <img
+                    <NavLink to={"/profile/"+u.id}>      <img
                         src={u.photos.small === null ? avatarDefolt : u.photos.small}
                         className={s.usersImg}
                         alt="аватар"/>
+                    </NavLink>
                     {
 
                         <button onClick={() => {

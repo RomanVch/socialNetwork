@@ -51,8 +51,9 @@ export type message = {
 export type TaskType = {
     textPost:string;
     postes:Array<typePost>;
+    profile:{},
+    }
 
-}
 
 
 export type PropsFriendMessage = {
@@ -81,7 +82,7 @@ export type friendMessageType ={
 }
 
 
-export const store: typeStore = {
+/*export const store: typeStore = {
     _state: {
         post: {
             textPost: "",
@@ -283,7 +284,7 @@ export const store: typeStore = {
         this._callSubscriber(this._state)
 
     }
-}
+}*/
 export const addPostActionCreator = () => ({type: ADDPOST})
 export const upPostStateActionCreator = (editString: string) => {
     debugger

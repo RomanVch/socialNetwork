@@ -9,32 +9,6 @@ import {Dispatch} from "redux";
 import {AppStateType} from "../../../redux/redux-store";
 import {connect} from "react-redux";
 
-/*export function BlockMessageContainer(props: typeBlockMsg) {
-    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        props.dispatch(upPostStateActionCreator(e.currentTarget.value))
-    }
-    const onKeyPressHandler = (e: KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === "Enter") {
-            e.preventDefault()
-            return addMsg()
-        }
-    }
-    const addMsg = () => {
-
-        props.dispatch(addPostActionCreator(props.textMessage))
-
-    }
-
-    return (
-        <BlockMessage onChangeHandler={onChangeHandler}
-                      textMessage={props.textMessage}
-                      onKeyPressHandler={onKeyPressHandler}
-                      addMsg={addMsg}/>
-    )
-};
-
-export default BlockMessageContainer*/
-
 type MSTPType = {
     textMessage: string
 }

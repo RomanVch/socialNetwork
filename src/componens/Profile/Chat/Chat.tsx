@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import style from './Chat.module.css';
 import heart from './img/heart.svg'
 import {addLikeActionCreator} from "../../../redux/store";
+import {useDispatch} from "react-redux";
 
 
 type propsType = {
@@ -11,16 +12,16 @@ type propsType = {
         message: string
         like: number
     }
-    dispatch:(active:any)=>void
+
 
 }
 
 function Chat(props: propsType) {
     const [like,setLike]= useState(props.mediaMessage.like)
-
+const dispatch=useDispatch()
 const Fun = ()=> {
         debugger
-     return props.dispatch(addLikeActionCreator(like,props.mediaMessage.like,setLike))}
+     return dispatch(addLikeActionCreator(like,props.mediaMessage.like,setLike))}
     return (
         <div>
             <div className={style.content__message}>
