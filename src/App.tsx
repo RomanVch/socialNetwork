@@ -27,11 +27,10 @@ function App(props:propsType) {
             <Header/>
             <Nav/>
             <div className="content">
-            <Route path="/profile" render={()=><ProfileContainer/>}/>
+            <Route path="/profile/:userId?" render={()=><ProfileContainer/>}/>
             <Route path="/dialogs/:id" render={()=> <DialogsContainer/>}/>
             <Route path="/maps" render={()=><Maps/>}/>
             <Route path="/balance" render={()=><Balance/>}/>
-            <Route path="/fileBox" render={()=><FileBox/>}/>
             <Route path="/users" render={()=><UsersContainer/>}/>
             </div>
 

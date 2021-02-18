@@ -1,4 +1,4 @@
-import {TaskType} from "./store";
+import {TaskType, Test} from "./store";
 
 export const ADDPOST = "ADD-POST",
     UPPOSTSTATE = "UP-POST-STATE",
@@ -30,7 +30,7 @@ let initialState = {
             message: "Привет"
         }
     ],
-    profile:{}
+    profile:[] as Test
 }
 
 const profileReducer = (state: TaskType = initialState, action: any): TaskType => {
