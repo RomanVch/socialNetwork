@@ -51,9 +51,10 @@ export type message = {
 export type TaskType = {
     textPost:string;
     postes:Array<typePost>;
-    profile:{},
+    profile: Test,
     }
 
+    export type Test = Array<{[key: string] : null | string | number}>
 
 
 export type PropsFriendMessage = {

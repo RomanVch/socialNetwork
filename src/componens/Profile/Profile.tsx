@@ -19,7 +19,8 @@ function Profile(props: propsType) {
     if(props.profile.photos === undefined){
         return <Preloader/>
     }
-    console.log(props.profile.photos)
+
+    console.log(props.profile)
     return (
 
         <section>

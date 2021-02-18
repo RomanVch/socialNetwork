@@ -9,10 +9,16 @@ import {AppStateType} from "../../redux/redux-store";
 import Profile from "./Profile";
 import axios from "axios";
 import {setUserProfileAC} from "../../redux/profile-reducer";
+import {withRouter} from "react-router";
 
 class ProfileContainers extends React.Component<any, any> {
+
     componentDidMount() {
-        axios.get("https://social-network.samuraijs.com/api/1.0/profile/2")
+        let userId=this.props.match.params.userId
+        if (!userId){
+            userId=2
+        }
+        axios.get("https://social-network.samuraijs.com/api/1.0/profile/" + userId)
             .then(response => {
                     this.props.setUserProfileAC(response.data)
                 })
@@ -49,5 +55,7 @@ let mapStateProps = (state: AppStateType):MSPtype => {
     }
 }
 
-export const ProfileContainer=connect<MSPtype,MDPtype,{},AppStateType>(mapStateProps,{setUserProfileAC})(ProfileContainers);
+const WithRouterProfileContainer=withRouter(ProfileContainers)
+
+export const ProfileContainer=connect<MSPtype,MDPtype,{},AppStateType>(mapStateProps,{setUserProfileAC})(WithRouterProfileContainer);
 
