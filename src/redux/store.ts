@@ -288,7 +288,7 @@ export type friendMessageType ={
 }*/
 export const addPostActionCreator = () => ({type: ADDPOST})
 export const upPostStateActionCreator = (editString: string) => {
-    debugger
+
     return {type: UPPOSTSTATE, stringAddingPost: editString}
 }
 export const addMessageActionCreator = (id: string) => ({type: ADDMESSAGE, id: id})

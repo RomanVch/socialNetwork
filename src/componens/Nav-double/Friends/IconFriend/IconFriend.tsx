@@ -16,7 +16,7 @@ type propsTypeFriend={
              return style.Friends_img
          }
      }
-     debugger
+
     return(
         <li className={style.Friends__li}>
             <NavLink  to={"/dialogs/" + props.id} ><img className={online(props.online)} width="50px" height="50px"   src={props.avatar} />

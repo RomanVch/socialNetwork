@@ -15,7 +15,6 @@ import {AppStateType} from "../../../redux/redux-store";
 
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        debugger
         props.dispatch(upMessageActionCreator(e.currentTarget.value))
     }
     const addMessage = () => {
@@ -51,11 +50,10 @@ let mapStateProps = (state: AppStateType): MSTPType => {
 let mapDispatch = (dispatch: Dispatch): MDTPType => {
     return {
         onChangeHandler: (e: ChangeEvent<HTMLInputElement>) => {
-            debugger
             dispatch(upMessageActionCreator(e.currentTarget.value))
         },
         addMessage: (id: string) => {
-            debugger
+
             dispatch(addMessageActionCreator(id))
         }
     }
