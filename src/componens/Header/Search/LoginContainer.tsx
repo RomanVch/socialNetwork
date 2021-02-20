@@ -15,7 +15,7 @@ class LoginContainers extends React.Component<any, any>{
         })
             .then(response=>{
                 if (response.data.resultCode === 0){
-                    debugger
+
                     this.props.authReducerAC(response.data.data)
                 }
             })

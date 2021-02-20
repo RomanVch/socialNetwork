@@ -16,7 +16,7 @@ class ProfileContainers extends React.Component<any, any> {
     componentDidMount() {
         let userId=this.props.match.params.userId
         if (!userId){
-            userId=2
+            userId=this.props.defaultId
         }
         axios.get("https://social-network.samuraijs.com/api/1.0/profile/" + userId)
             .then(response => {
@@ -40,7 +40,8 @@ type MSPtype={
         avatar: string,
         message: string}[]
     textMessage:string
-profile:any
+profile:any,
+    defaultId:number
 }
 
 type MDPtype={
@@ -51,7 +52,8 @@ let mapStateProps = (state: AppStateType):MSPtype => {
     return {
         mediaMessage:state.post.postes,
         textMessage:state.post.textPost,
-        profile:state.post.profile
+        profile:state.post.profile,
+        defaultId:state.auth.id
     }
 }
 
