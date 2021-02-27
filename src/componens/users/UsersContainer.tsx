@@ -5,7 +5,7 @@ import {
     inStateType,
     setPage,
     setTotalUsersCount,
-    setUsers, toggleIsFetching,
+    setUsers, toggleFollowingInProgress, toggleIsFetching,
     unFollow,
     usersType
 } from "../../redux/user-reducer";
@@ -15,6 +15,7 @@ import axios from "axios";
 import {Users} from "./users";
 import preloader from "../../img/6.gif"
 import {Preloader} from "../common/preloader/Preloader";
+import {usersAPI} from "../../apiTS/API";
 
 type MDTPtype = {
     follow: (userId: number) => void,
@@ -23,6 +24,7 @@ type MDTPtype = {
     setPage:(pagesNumber:number)=>void
     setTotalUsersCount:(totalCount:number)=>void
     toggleIsFetching:(isFetching:boolean)=>void
+    toggleFollowingInProgress:(isFetching:boolean,id:number)=>void
 }
 
 class UserSAPIComponent extends React.Component<any, any> {
@@ -31,20 +33,20 @@ class UserSAPIComponent extends React.Component<any, any> {
     }
     componentDidMount() {
 this.props.toggleIsFetching(true)
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`,{withCredentials: true})
-            .then(response => {
+        usersAPI.getUsers(this.props.currentPage,this.props.pageSize)
+            .then(data => {
                 this.props.toggleIsFetching(false)
-                this.props.setUsers(response.data.items)
-                this.props.setTotalUsersCount(response.data.totalCount)
+                this.props.setUsers(data.items)
+                this.props.setTotalUsersCount(data.totalCount)
             })
     }
 
 
     onPageChanged = (pageNumber: number) => {
         this.props.setPage(pageNumber)
-
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`,{withCredentials: true}).then(response => {
-            this.props.setUsers(response.data.items)
+        usersAPI.getUsers(pageNumber,this.props.pageSize)
+       .then(data => {
+            this.props.setUsers(data.items)
         })
     }
 
@@ -59,7 +61,8 @@ this.props.toggleIsFetching(true)
                 currentPage={this.props.currentPage}
                 users={this.props.users}
                 follow={this.props.follow}
-
+                toggleFollowingInProgress={this.props.toggleFollowingInProgress}
+                followingInProgress={this.props.followingInProgress}
             />
 
             </>
@@ -76,33 +79,12 @@ const MapStateToProps = (state: AppStateType): inStateType => {
         pageSize:state.usersPage.pageSize,
         totalUsersCount:state.usersPage.totalUsersCount,
         currentPage:state.usersPage.currentPage,
-        isFetching:state.usersPage.isFetching
+        isFetching:state.usersPage.isFetching,
+        followingInProgress:state.usersPage.followingInProgress
+
     }
 }
 
-/*const MapDispatchToProps = (dispatch: Dispatch): MDTPtype => {
-    return {
-        follow: (userId: number) => {
-            dispatch(followAC(userId))
-        },
-        unfollow: (userId: number) => {
-            dispatch(unFollowAC(userId))
-        },
-        setUsers: (users: any) => {
-            dispatch(setUsersAC(users))
-        },
-        setPage:(pagesNumber:number)=>{
-            dispatch(setPageAC(pagesNumber))
-        },
-        setTotalUsersCount:(totalCount:number)=>{
-            dispatch(setTotalUsersCountAC(totalCount))
-        },
-        toggleIsFetching:(isFetching)=>{
-            dispatch(toogleLoadAC(isFetching))
-        }
-    }
-}*/
-
 export const UsersContainer = connect<inStateType, MDTPtype, {}, AppStateType>(MapStateToProps,
-    {follow, unFollow, setUsers, setPage, setTotalUsersCount, toggleIsFetching})(UserSAPIComponent)
+    {follow, unFollow, setUsers, setPage, setTotalUsersCount, toggleIsFetching,toggleFollowingInProgress})(UserSAPIComponent)
 
