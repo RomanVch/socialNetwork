@@ -1,4 +1,6 @@
 import {TaskType, Test} from "./store";
+import {Dispatch} from "react";
+import {usersAPI} from "../apiTS/API";
 
 export const ADDPOST = "ADD-POST",
     UPPOSTSTATE = "UP-POST-STATE",
@@ -61,6 +63,15 @@ const profileReducer = (state: TaskType = initialState, action: any): TaskType =
 
     }
 }
+
+export const profileThunk=(userId:number)=>{
+    return (dispath:Dispatch<any>)=>{
+        usersAPI.loadProfile(userId)
+            .then(response => {
+                dispath(setUserProfileAC(response.data))
+            })
+
+    }}
 
 export const setUserProfileAC=(profile:any)=>({type:SET_USER_PROFILE,profile})
 export default profileReducer

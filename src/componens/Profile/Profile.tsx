@@ -6,7 +6,6 @@ import {MessageType,addPostActionCreator} from "../../redux/store";
 import {MessageBlockContainers} from "./blockMessage/blockMessageСontainer";
 import {useSelector} from "react-redux";
 import {AppStateType} from "../../redux/redux-store";
-import axios from "axios";
 import {Preloader} from "../common/preloader/Preloader";
 
 type propsType = {

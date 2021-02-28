@@ -23,6 +23,15 @@ export const usersAPI= {
 
  unFollowDeleteUser (id: number) {
   return instance.delete(`follow/${id}`)
- }
+ },
 
+ login(){
+  return  instance.get(`auth/me`).then(response=>{
+return response.data
+  })
+ },
+
+ loadProfile(userId:any){
+ return  instance.get("profile/"+userId)
+ }
 }

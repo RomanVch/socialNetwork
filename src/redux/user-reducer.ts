@@ -1,3 +1,6 @@
+import {Dispatch} from "react";
+import {usersAPI} from "../apiTS/API";
+
 const FOLLOW = "FOLLOW",
     UNFOLLOW = "UNFOLLOW",
     SET_USERS = "SET_USERS",
@@ -48,8 +51,8 @@ const initialState: inStateType = {
 }
 
 
-export const follow = (ID: number) => ({type: FOLLOW, id: ID})
-export const unFollow = (ID: number) => ({type: UNFOLLOW, id: ID})
+export const acceptFollow = (ID: number) => ({type: FOLLOW, id: ID})
+export const acceptUnFollow = (ID: number) => ({type: UNFOLLOW, id: ID})
 export const setUsers = (users: usersType) => ({type: SET_USERS, users})
 export const setPage = (currentPage: number) => ({type: SET_PAGE, currentPage})
 export const setTotalUsersCount = (totalCount: number) => ({type: TOTAL_COUNT, totalCount})
@@ -104,4 +107,58 @@ const userReducer = (state = initialState, action: userACType): inStateType => {
 
 
 }
+export const getUsersThunkCreator=(currentPage:number,pageSize:number)=>{
+   return (dispath:Dispatch<any>)=>{
+        dispath(toggleIsFetching(true))
+        usersAPI.getUsers(currentPage,pageSize)
+            .then(data => {
+                dispath(toggleIsFetching(false))
+                dispath(setUsers(data.items))
+                dispath(setTotalUsersCount(data.totalCount))
+            })
+    }
+}
+export const onPageChanged=(pageNumber:number,pageSize:number)=>{
+    return (dispath:Dispatch<any>)=>{
+        dispath(setPage(pageNumber))
+
+        usersAPI.getUsers(pageNumber,pageSize)
+            .then(data => {
+                dispath(setUsers(data.items))
+            })
+    }
+}
+
+
+
+
+
+
+export const follow=(id:number,followed:boolean)=>{
+    return (dispath:Dispatch<any>)=>{
+        if (!followed) {
+            dispath(toggleFollowingInProgress(true, id))
+            usersAPI.followPostUser(id)
+                .then(response => {
+                    if (response.data.resultCode === 0) {
+                        dispath(acceptFollow(id))
+                        dispath(toggleFollowingInProgress(false, id))
+                    }
+                })
+        } else {
+            dispath(toggleFollowingInProgress(true, id))
+            usersAPI.unFollowDeleteUser(id)
+                .then(response => {
+
+                    if (response.data.resultCode === 0) {
+                        dispath(acceptFollow(id))
+                        dispath(toggleFollowingInProgress(false, id))
+                    }
+
+                })
+
+        }
+    }
+}
+
 export default userReducer

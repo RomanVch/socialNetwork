@@ -1,13 +1,13 @@
 import React from "react";
 import {connect} from "react-redux";
 import {
-    follow,
+    follow, getUsersThunkCreator,
     inStateType,
     setPage,
     setTotalUsersCount,
     setUsers, toggleFollowingInProgress, toggleIsFetching,
-    unFollow,
-    usersType
+    acceptUnFollow,
+    usersType, onPageChanged
 } from "../../redux/user-reducer";
 import {AppStateType} from "../../redux/redux-store";
 import {Dispatch} from "redux";
@@ -18,13 +18,11 @@ import {Preloader} from "../common/preloader/Preloader";
 import {usersAPI} from "../../apiTS/API";
 
 type MDTPtype = {
-    follow: (userId: number) => void,
-    unFollow: (userId: number) => void,
-    setUsers: (users: any) => void,
-    setPage:(pagesNumber:number)=>void
-    setTotalUsersCount:(totalCount:number)=>void
-    toggleIsFetching:(isFetching:boolean)=>void
-    toggleFollowingInProgress:(isFetching:boolean,id:number)=>void
+    follow: (id:number,followed:boolean) => void
+    setPage: (pagesNumber: number) => void
+    toggleFollowingInProgress: (isFetching: boolean, id: number) => void
+    getUsersThunkCreator: (currentPage: number, pageSize: number) => void
+    onPageChanged:(pageNumber:number,pageSize:number)=>void
 }
 
 class UserSAPIComponent extends React.Component<any, any> {
@@ -32,30 +30,17 @@ class UserSAPIComponent extends React.Component<any, any> {
         super(props);
     }
     componentDidMount() {
-this.props.toggleIsFetching(true)
-        usersAPI.getUsers(this.props.currentPage,this.props.pageSize)
-            .then(data => {
-                this.props.toggleIsFetching(false)
-                this.props.setUsers(data.items)
-                this.props.setTotalUsersCount(data.totalCount)
-            })
+this.props.getUsersThunkCreator(this.props.currentPage,this.props.pageSize)
     }
 
 
-    onPageChanged = (pageNumber: number) => {
-        this.props.setPage(pageNumber)
-        usersAPI.getUsers(pageNumber,this.props.pageSize)
-       .then(data => {
-            this.props.setUsers(data.items)
-        })
-    }
 
     render() {
 
         return (<>
                 {this.props.isFetching?<Preloader/>:null}
                 <Users
-                onPageChanged={this.onPageChanged}
+                onPageChanged={this.props.onPageChanged}
                 totalUsersCount={this.props.totalUsersCount}
                 pageSize={this.props.pageSize}
                 currentPage={this.props.currentPage}
@@ -85,6 +70,8 @@ const MapStateToProps = (state: AppStateType): inStateType => {
     }
 }
 
+
+
 export const UsersContainer = connect<inStateType, MDTPtype, {}, AppStateType>(MapStateToProps,
-    {follow, unFollow, setUsers, setPage, setTotalUsersCount, toggleIsFetching,toggleFollowingInProgress})(UserSAPIComponent)
+    {follow, setPage, toggleFollowingInProgress,onPageChanged,getUsersThunkCreator})(UserSAPIComponent)
 

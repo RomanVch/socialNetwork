@@ -8,8 +8,10 @@ import {connect, useSelector} from "react-redux";
 import {AppStateType} from "../../redux/redux-store";
 import Profile from "./Profile";
 import axios from "axios";
-import {setUserProfileAC} from "../../redux/profile-reducer";
+import {profileThunk, setUserProfileAC} from "../../redux/profile-reducer";
 import {withRouter} from "react-router";
+import {usersAPI} from "../../apiTS/API";
+
 
 class ProfileContainers extends React.Component<any, any> {
 
@@ -18,10 +20,7 @@ class ProfileContainers extends React.Component<any, any> {
         if (!userId){
             userId=this.props.defaultId
         }
-        axios.get("https://social-network.samuraijs.com/api/1.0/profile/" + userId)
-            .then(response => {
-                    this.props.setUserProfileAC(response.data)
-                })
+       this.props.profileThunk(userId)
 
     }
 
@@ -46,6 +45,7 @@ profile:any,
 
 type MDPtype={
     setUserProfileAC:(profile:any)=>void
+    profileThunk:(userId:number)=>void
 }
 
 let mapStateProps = (state: AppStateType):MSPtype => {
@@ -59,5 +59,5 @@ let mapStateProps = (state: AppStateType):MSPtype => {
 
 const WithRouterProfileContainer=withRouter(ProfileContainers)
 
-export const ProfileContainer=connect<MSPtype,MDPtype,{},AppStateType>(mapStateProps,{setUserProfileAC})(WithRouterProfileContainer);
+export const ProfileContainer=connect<MSPtype,MDPtype,{},AppStateType>(mapStateProps,{setUserProfileAC,profileThunk})(WithRouterProfileContainer);
 

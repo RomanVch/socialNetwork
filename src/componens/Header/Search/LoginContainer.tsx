@@ -3,37 +3,37 @@ import React from 'react';
 import axios from "axios";
 import {connect} from "react-redux";
 import Login from "./Login";
-import {authReducerAC, AuthReducerACType} from "../../../redux/auth-reducer ";
+import {authReducerAC, AuthReducerACType, getAuthUserData} from "../../../redux/auth-reducer ";
 import {AppStateType} from "../../../redux/redux-store";
+import {usersAPI} from "../../../apiTS/API";
 
 
 
 class LoginContainers extends React.Component<any, any>{
     componentDidMount() {
-        axios.get("https://social-network.samuraijs.com/api/1.0/auth/me",{
-            withCredentials:true
-        })
-            .then(response=>{
-                if (response.data.resultCode === 0){
-
-                    this.props.authReducerAC(response.data.data)
-                }
-            })
+        this.props.getAuthUserData()
     }
 
     render() {
+        console.log(this.props)
         return(
             <Login{...this.props}/>
+
         )
     }
 }
 type MSTPtype= {}
 type MDPtype={
-    authReducerAC:(id:number,email:string,login:string)=>void
+    getAuthUserData:()=>void
+
 }
 const mapStateToProps =(state: AppStateType)=>({
 isAuth:state.auth.isAuth,
-    login:state.auth.login
+    login:state.auth.login,
+    id:state.auth.id,
+    email:state.auth.email
+
 })
 type propsConnectType=MSTPtype | MDPtype
-export const LoginContainer =  connect<MSTPtype,MDPtype,{},AppStateType>(mapStateToProps,{authReducerAC}) (LoginContainers)
+export const LoginContainer =  connect<MSTPtype,MDPtype,{},AppStateType>(mapStateToProps,
+    {getAuthUserData}) (LoginContainers)

@@ -26,14 +26,15 @@ export let Users = (props: any) => {
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i)
     }
+    debugger
     return <div>
         <div>
             <button onClick={() => setPagesListButton(pagesListButton - 5)}>...</button>
             {pages.map((p, i) => {
                 if (i < pagesListButton) {
 
-                    return <button onClick={(e) => {
-                        props.onPageChanged(p)
+                    return <button key={i} onClick={(e) => {
+                        props.onPageChanged(p,props.pageSize)
                     }} className={props.currentPage === p ? s.active : ""}>{p}</button>
 
                 } else {
@@ -56,12 +57,15 @@ export let Users = (props: any) => {
                     {
 
                         <button disabled={props.followingInProgress.some((id: any) => id === u.id)} onClick={() => {
-                            {
+props.follow(u.id,u.followed)
+
+
+                            /*                            {
                                 if (!u.followed) {
                                     props.toggleFollowingInProgress(true, u.id)
                                     usersAPI.followPostUser(u.id)
                                         .then(response => {
-                                            if (response.data.resultCode == 0) {
+                                            if (response.data.resultCode === 0) {
                                                 props.follow(u.id)
                                                 props.toggleFollowingInProgress(false, u.id)
                                             }
@@ -81,7 +85,7 @@ export let Users = (props: any) => {
                                 }
 
 
-                            }
+                            }*/
                         }}>{u.followed ?
                             "follow" :
                             "unfolow"}
