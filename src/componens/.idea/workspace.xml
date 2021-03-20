@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="681e92c0-194a-4634-ac9c-80a01e6e3ec8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/LoginPage/LoginPage.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LoginPage/LoginPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apiTS/API.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../apiTS/API.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dialogs/MessageBlock/MessageBlockDialogContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Dialogs/MessageBlock/MessageBlockDialogContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/Profile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Profile/ProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/ProfileContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Profile/imgMain/imgMain.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/imgMain/imgMain.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/UsersContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/users/UsersContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/users/users.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redux/auth-reducer .ts" beforeDir="false" afterPath="$PROJECT_DIR$/../redux/auth-reducer .ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redux/profile-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../redux/profile-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redux/redux-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../redux/redux-store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../redux/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1pn17HCZNci3TefrqvsKVxStTaR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="681e92c0-194a-4634-ac9c-80a01e6e3ec8" name="Default Changelist" comment="" />
+      <created>1615803872230</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1615803872230</updated>
+      <workItem from="1615803874218" duration="463000" />
+      <workItem from="1615804344826" duration="5000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

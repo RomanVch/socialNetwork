@@ -4,18 +4,17 @@ import {
     follow, getUsersThunkCreator,
     inStateType,
     setPage,
-    setTotalUsersCount,
-    setUsers, toggleFollowingInProgress, toggleIsFetching,
-    acceptUnFollow,
-    usersType, onPageChanged
+    toggleFollowingInProgress,
+    onPageChanged
 } from "../../redux/user-reducer";
 import {AppStateType} from "../../redux/redux-store";
-import {Dispatch} from "redux";
-import axios from "axios";
 import {Users} from "./users";
-import preloader from "../../img/6.gif"
 import {Preloader} from "../common/preloader/Preloader";
-import {usersAPI} from "../../apiTS/API";
+import {withAuthRedirect} from "../../HOC/authRedirectHOC";
+import {compose} from "redux";
+import {withRouter} from "react-router";
+import {MSPtype} from "../Dialogs/DialogsContainer";
+
 
 type MDTPtype = {
     follow: (id:number,followed:boolean) => void
@@ -48,6 +47,7 @@ this.props.getUsersThunkCreator(this.props.currentPage,this.props.pageSize)
                 follow={this.props.follow}
                 toggleFollowingInProgress={this.props.toggleFollowingInProgress}
                 followingInProgress={this.props.followingInProgress}
+                {...this.props}
             />
 
             </>
@@ -58,20 +58,29 @@ this.props.getUsersThunkCreator(this.props.currentPage,this.props.pageSize)
 export type usersPropsType = MDTPtype & inStateType
 
 
-const MapStateToProps = (state: AppStateType): inStateType => {
+
+
+const MapStateToProps = (state: AppStateType):inStateType => {
     return {
         users: state.usersPage.users,
         pageSize:state.usersPage.pageSize,
         totalUsersCount:state.usersPage.totalUsersCount,
         currentPage:state.usersPage.currentPage,
         isFetching:state.usersPage.isFetching,
-        followingInProgress:state.usersPage.followingInProgress
-
+        followingInProgress:state.usersPage.followingInProgress,
     }
 }
 
+export const WithAuthRedirectHOC = compose<React.ComponentType>(
+    withAuthRedirect,
+    withRouter,
+    connect<inStateType, MDTPtype, {}, AppStateType>(MapStateToProps,
+        {follow, setPage, toggleFollowingInProgress,onPageChanged,getUsersThunkCreator}))
+(UserSAPIComponent)
 
 
-export const UsersContainer = connect<inStateType, MDTPtype, {}, AppStateType>(MapStateToProps,
+/*
+const UsersContainer = connect<inStateType, MDTPtype, {}, AppStateType>(MapStateToProps,
     {follow, setPage, toggleFollowingInProgress,onPageChanged,getUsersThunkCreator})(UserSAPIComponent)
 
+export const WithAuthRedirectHOC = withAuthRedirect(UsersContainer)*/

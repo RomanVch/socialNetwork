@@ -1,14 +1,17 @@
 import {TaskType, Test} from "./store";
 import {Dispatch} from "react";
-import {usersAPI} from "../apiTS/API";
+import {profileAPI, usersAPI} from "../apiTS/API";
 
 export const ADDPOST = "ADD-POST",
     UPPOSTSTATE = "UP-POST-STATE",
     ADDLIKE = "ADD-LIKE",
-    SET_USER_PROFILE="SET_USER_PROFILE"
+    SET_USER_PROFILE="SET_USER_PROFILE",
+    SET_STATUS="SET_STATUS",
+    UPDATE_STATUS="UPDATE_STATUS"
 
 let initialState = {
     textPost: "",
+    status:"",
     postes: [
         {
             id: 3,
@@ -57,7 +60,11 @@ const profileReducer = (state: TaskType = initialState, action: any): TaskType =
             return state
         case SET_USER_PROFILE:
              return {...state,profile:action.profile}
-
+        case SET_STATUS:
+            debugger
+            return {...state,status:action.status}
+        case UPDATE_STATUS:
+            return {...state,status:action.status}
         default:
             return state
 
@@ -72,6 +79,27 @@ export const profileThunk=(userId:number)=>{
             })
 
     }}
+export const getProfileStatusThunk=(userId:number)=>{
+    return (dispath:Dispatch<any>)=>{
+        profileAPI.getStatus(userId)
+            .then(response => {
+                debugger
+                dispath(getProfileStatusAC(response.data))
+            })
 
-export const setUserProfileAC=(profile:any)=>({type:SET_USER_PROFILE,profile})
+    }}
+export const updateProfileStatusThunk=(status:string)=>{
+    return (dispath:Dispatch<any>)=>{
+        profileAPI.updateStatus(status)
+            .then(response => {
+                if(response.data.resultCode===0){
+                dispath(getProfileStatusAC(status))}
+            })
+
+    }}
+    export const setUserProfileAC=(profile:any)=>({type:SET_USER_PROFILE,profile})
+export const getProfileStatusAC=(status:any)=>{
+   debugger
+    return {type:SET_STATUS,status}
+}
 export default profileReducer

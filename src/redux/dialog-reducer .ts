@@ -191,6 +191,7 @@ const dialogReducer = (state:friendMessageType = initialState ,action:any): any 
             newState.textMessage = "";
             return newState;}
         case UPMESSAGESTATE:
+            debugger
             return {...state,textMessage:action.addingPost}
         default:
             return state

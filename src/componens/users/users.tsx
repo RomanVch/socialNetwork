@@ -2,8 +2,7 @@ import React, {useState} from "react";
 import s from "./Users.module.css";
 import avatarDefolt from "../../img/defoltAvatar.png";
 import {NavLink} from "react-router-dom";
-import axios from "axios";
-import {usersAPI} from "../../apiTS/API";
+
 
 type usersTypes = {
     name: string,
@@ -19,6 +18,7 @@ type usersTypes = {
 
 
 export let Users = (props: any) => {
+
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
     let [pagesListButton, setPagesListButton] = useState(5)
     console.log(props.users)
@@ -26,7 +26,8 @@ export let Users = (props: any) => {
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i)
     }
-    debugger
+
+
     return <div>
         <div>
             <button onClick={() => setPagesListButton(pagesListButton - 5)}>...</button>
@@ -59,33 +60,6 @@ export let Users = (props: any) => {
                         <button disabled={props.followingInProgress.some((id: any) => id === u.id)} onClick={() => {
 props.follow(u.id,u.followed)
 
-
-                            /*                            {
-                                if (!u.followed) {
-                                    props.toggleFollowingInProgress(true, u.id)
-                                    usersAPI.followPostUser(u.id)
-                                        .then(response => {
-                                            if (response.data.resultCode === 0) {
-                                                props.follow(u.id)
-                                                props.toggleFollowingInProgress(false, u.id)
-                                            }
-                                        })
-                                } else {
-                                    props.toggleFollowingInProgress(true, u.id)
-                                    usersAPI.unFollowDeleteUser(u.id)
-                                        .then(response => {
-
-                                            if (response.data.resultCode === 0) {
-                                                props.follow(u.id)
-                                                props.toggleFollowingInProgress(false, u.id)
-                                            }
-
-                                        })
-
-                                }
-
-
-                            }*/
                         }}>{u.followed ?
                             "follow" :
                             "unfolow"}

@@ -2,7 +2,16 @@ import React from 'react';
 import avatarDefolt from "../../../img/defoltAvatar.png";
 import style from './imgMain.module.css';
 import {Preloader} from "../../common/preloader/Preloader";
-  function ImgMain (props: any) {
+import {Status} from "./status/Status";
+
+type ImgMainPropsType={
+    profile:any
+    status:string
+    updateStatus:(status:string)=>void
+}
+
+
+  function ImgMain (props: ImgMainPropsType) {
 
     return(
       <div className={style.img_main}>
@@ -18,6 +27,8 @@ import {Preloader} from "../../common/preloader/Preloader";
           <h2 className={style.content__h2}>{props.profile.fullName}</h2>
           <p className={style.content__paragraph}>{props.profile.aboutMe}</p>
           <p className={style.content__paragraph}>{props.profile.lookingForAJob?props.profile.lookingForAJobDescription:"Работаю"}</p>
+<Status status={props.status}
+        updateStatus={props.updateStatus}/>
       </div>
 
         <a href={"https://"+props.profile.contacts.instagram} className={style.content_profile_link}>instagram</a>

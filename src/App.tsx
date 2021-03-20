@@ -6,11 +6,11 @@ import Nav from './componens/Nav/Nav';
 import Maps from './componens/Map/Map';
 import {BrowserRouter, Route} from "react-router-dom";
 import Balance from "./componens/Balance/Balance";
-import FileBox from "./componens/FileBox/FileBox";
-import {DialogsContainer} from "./componens/Dialogs/DialogsContainer";
-import {ProfileContainer} from "./componens/Profile/ProfileContainer";
+import {WithAuthDialogsRedirectHOC} from "./componens/Dialogs/DialogsContainer";
+import {WithAuthProfileRedirectHOC} from "./componens/Profile/ProfileContainer";
 import {NavdoubleContainer} from "./componens/Nav-double/Nav-doubleContainer";
-import {UsersContainer} from "./componens/users/UsersContainer";
+import { WithAuthRedirectHOC} from "./componens/users/UsersContainer";
+import LoginPage from "./componens/LoginPage/LoginPage";
 
 
 type propsType= {
@@ -27,11 +27,12 @@ function App(props:propsType) {
             <Header/>
             <Nav/>
             <div className="content">
-            <Route path="/profile/:userId?" render={()=><ProfileContainer/>}/>
-            <Route path="/dialogs/:id" render={()=> <DialogsContainer/>}/>
+            <Route path="/profile/:userId?" render={()=><WithAuthProfileRedirectHOC/>}/>
+            <Route path="/dialogs/" render={()=> <WithAuthDialogsRedirectHOC/>}/>
             <Route path="/maps" render={()=><Maps/>}/>
             <Route path="/balance" render={()=><Balance/>}/>
-            <Route path="/users" render={()=><UsersContainer/>}/>
+            <Route path="/users" render={()=><WithAuthRedirectHOC/>}/>
+            <Route path="/login" render={()=><LoginPage/>}/>
             </div>
 
             <NavdoubleContainer/>

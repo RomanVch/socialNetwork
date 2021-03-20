@@ -13,7 +13,6 @@ import {MSPtype} from "./DialogsContainer";
 type propsType = {
     PropsFriend: Array<typePropsFriendObject>
     PropsMessage: any
-    dispatch:(active:any)=>void
     txtMsg:string
 }
 
@@ -21,12 +20,13 @@ type typeBlockMsg = {
     addPost: any
 }
 
+
+
 function Dialogs(props: MSPtype) {
 
     const renderDialogs = props.PropsFriend.map((p: any) => {
+
         if (window.location.pathname === "/dialogs/" + p.id) {
-
-
             return (
                 <div>
                     {

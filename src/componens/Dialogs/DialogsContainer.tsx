@@ -1,23 +1,31 @@
-import React, {ChangeEvent, useState} from 'react';
-import YouMessage from "./YouMessage/YouMessage";
-import FriendMessage from "./FriendMessage/FriendMessage";
-import close from "./img/close.svg";
-import style from "./Dialogs.module.css"
-import {
-    addMessageActionCreator,
-    friendMessageType,
-    typePropsFriendObject,
-    upMessageActionCreator
-} from "../../redux/store";
-import {MessageBlockDialog} from "./MessageBlock/MessageBlockDialog";
-import {
-    SuperMessageBlockDialogContainer
-} from "./MessageBlock/MessageBlockDialogContainer";
+import React from 'react';
 import {connect} from "react-redux";
 import {AppStateType} from "../../redux/redux-store";
-import {Dispatch} from "redux";
+import {compose} from "redux";
 import Dialogs from "./Dialogs";
+import {withAuthRedirect} from "../../HOC/authRedirectHOC";
+import {Preloader} from "../common/preloader/Preloader";
+import {withRouter} from "react-router";
 
+class DialogsSAPIComponent extends React.Component<any, any> {
+    constructor(props: any) {
+        super(props);
+    }
+
+    render() {
+console.log(this.props.PropsFriend)
+        return (<>
+                {this.props.isFetching ? <Preloader/> : null}
+                <Dialogs
+                    PropsFriend={this.props.PropsFriend}
+                    PropsMessage={this.props.PropsMessage}
+                    txtMsg={this.props.txtMsg}
+                />
+
+            </>
+        )
+    }
+}
 
 export type  MSPtype={
     PropsFriend: {    id: string,
@@ -35,7 +43,14 @@ let mapStateProps = (state: AppStateType):MSPtype => {
         txtMsg:state.friendMessage.textMessage
     }
 }
-
-export const DialogsContainer = connect<MSPtype,{},{},AppStateType>(mapStateProps)(Dialogs)
-
-
+    export const WithAuthDialogsRedirectHOC = compose<React.ComponentType>(
+    withAuthRedirect,
+    withRouter,
+    connect<MSPtype,{},{},AppStateType>(mapStateProps))
+(DialogsSAPIComponent)
+console.log(WithAuthDialogsRedirectHOC)
+/*
+const WithRouterProfileContainer=withRouter(DialogsSAPIComponent)
+export const DialogsContainer = connect<MSPtype,{},{},AppStateType>(mapStateProps)(WithRouterProfileContainer)
+export const WithAuthDialogsRedirectHOC = withAuthRedirect(DialogsContainer)
+*/

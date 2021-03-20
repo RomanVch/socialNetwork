@@ -52,6 +52,7 @@ export type TaskType = {
     textPost:string;
     postes:Array<typePost>;
     profile: Test,
+    status:string
     }
 
     export type Test = Array<{[key: string] : null | string | number}>

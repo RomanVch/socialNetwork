@@ -30,8 +30,31 @@ export const usersAPI= {
 return response.data
   })
  },
-
  loadProfile(userId:any){
- return  instance.get("profile/"+userId)
+  console.warn("use new API")
+ return  profileAPI.loadProfile(userId)
  }
 }
+export const profileAPI= {
+
+ loadProfile(userId:any){
+  return  instance.get("profile/"+userId)
+ },
+ getStatus(userId:any){
+ return instance.get(`profile/status/${userId}`)
+ },
+ updateStatus(status:string){
+
+  return instance.put(`profile/status`,{status:status})
+ }
+}
+
+export const loginAPI={
+ loginAuth(email:string,password:string,rememberMe:boolean=false){
+ return  instance.post(`auth/login`,{email: email, password: password,
+   rememberMe: rememberMe, captcha:true })
+ },
+ loginOut(){
+  return  instance.delete(`auth/login`)
+
+}}
