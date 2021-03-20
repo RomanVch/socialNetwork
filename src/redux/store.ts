@@ -52,6 +52,7 @@ export type TaskType = {
     textPost:string;
     postes:Array<typePost>;
     profile: Test,
+    status:string
     }
 
     export type Test = Array<{[key: string] : null | string | number}>
@@ -288,7 +289,7 @@ export type friendMessageType ={
 }*/
 export const addPostActionCreator = () => ({type: ADDPOST})
 export const upPostStateActionCreator = (editString: string) => {
-    debugger
+
     return {type: UPPOSTSTATE, stringAddingPost: editString}
 }
 export const addMessageActionCreator = (id: string) => ({type: ADDMESSAGE, id: id})

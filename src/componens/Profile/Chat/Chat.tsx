@@ -20,7 +20,7 @@ function Chat(props: propsType) {
     const [like,setLike]= useState(props.mediaMessage.like)
 const dispatch=useDispatch()
 const Fun = ()=> {
-        debugger
+
      return dispatch(addLikeActionCreator(like,props.mediaMessage.like,setLike))}
     return (
         <div>

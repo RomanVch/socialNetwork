@@ -14,7 +14,7 @@ type MSTPType = {
 }
 
 type MDTPType = {
-    onChangeHandler: (e: ChangeEvent<HTMLInputElement>) => void
+    onChangeHandler: (e: string) => void
     addMsg: (id: string)=>void
 }
 
@@ -28,8 +28,8 @@ let mapStateProps = (state:AppStateType): MSTPType => {
 
 let mapDispatch = (dispatch: Dispatch): MDTPType => {
     return {
-        onChangeHandler : (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch(upPostStateActionCreator(e.currentTarget.value))
+        onChangeHandler : (e: string) => {
+            dispatch(upPostStateActionCreator(e))
         },
         addMsg: () => {
             dispatch(addPostActionCreator())

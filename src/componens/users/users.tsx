@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import s from "./Users.module.css";
 import avatarDefolt from "../../img/defoltAvatar.png";
 import {NavLink} from "react-router-dom";
+
 
 type usersTypes = {
     name: string,
@@ -16,36 +17,53 @@ type usersTypes = {
 }
 
 
+export let Users = (props: any) => {
 
-export let Users = (props:any) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
-
+    let [pagesListButton, setPagesListButton] = useState(5)
     console.log(props.users)
     let pages = [];
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i)
     }
+
+
     return <div>
         <div>
-            {pages.map(p => {
-                return <button onClick={(e) => {
-                    props.onPageChanged(p)
-                }} className={props.currentPage === p ? s.active : ""}>{p}</button>
+            <button onClick={() => setPagesListButton(pagesListButton - 5)}>...</button>
+            {pages.map((p, i) => {
+                if (i < pagesListButton) {
+
+                    return <button key={i} onClick={(e) => {
+                        props.onPageChanged(p,props.pageSize)
+                    }} className={props.currentPage === p ? s.active : ""}>{p}</button>
+
+                } else {
+                    return
+                }
+
             })}
+            <button onClick={() => setPagesListButton(5 + pagesListButton)}>...</button>
         </div>
+
         <div>{
+
             props.users.map((u: usersTypes) => <div className={s.usersBlock} key={u.id}>
                 <div className={s.usersBlockAvatar}>
-                    <NavLink to={"/profile/"+u.id}>      <img
+                    <NavLink to={"/profile/" + u.id}> <img
                         src={u.photos.small === null ? avatarDefolt : u.photos.small}
                         className={s.usersImg}
                         alt="аватар"/>
                     </NavLink>
                     {
 
-                        <button onClick={() => {
-                            props.follow(u.id)
-                        }}>{u.followed ? "follow" : "unfolow"}</button>
+                        <button disabled={props.followingInProgress.some((id: any) => id === u.id)} onClick={() => {
+props.follow(u.id,u.followed)
+
+                        }}>{u.followed ?
+                            "follow" :
+                            "unfolow"}
+                        </button>
 
                     }
                 </div>

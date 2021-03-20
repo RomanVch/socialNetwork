@@ -7,26 +7,6 @@ import {AppStateType} from "../../../redux/redux-store";
 
 
 
-
-
-
-
-/*export function MessageBlockDialogContainer(props: typeMessage) {
-
-
-    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        debugger
-        props.dispatch(upMessageActionCreator(e.currentTarget.value))
-    }
-    const addMessage = () => {
-        props.dispatch(addMessageActionCreator(props.id))
-    }
-
-    return (
-        <MessageBlockDialog onChangeHandler={onChangeHandler} addMessage={addMessage} txtMsg={props.txtMsg}/>
-    );
-}*/
-
 type OwnPropsType = {
     id?: string
 }
@@ -36,11 +16,24 @@ type MSTPType = {
 }
 
 type MDTPType = {
-    onChangeHandler: (e: ChangeEvent<HTMLInputElement>) => void
+    onChangeHandler: (e:string) => void
     addMessage: any
 }
 
 export type MessageBlockPropsType = OwnPropsType & MSTPType & MDTPType
+
+
+
+
+export function MessageBlockDialogContainer(props: MessageBlockPropsType) {
+
+
+
+    return (
+        <MessageBlockDialog id={props.id}onChangeHandler={props.onChangeHandler} addMessage={props.addMessage} txtMsg={props.txtMsg}/>
+    );
+}
+
 
 let mapStateProps = (state: AppStateType): MSTPType => {
     return {
@@ -50,12 +43,10 @@ let mapStateProps = (state: AppStateType): MSTPType => {
 
 let mapDispatch = (dispatch: Dispatch): MDTPType => {
     return {
-        onChangeHandler: (e: ChangeEvent<HTMLInputElement>) => {
-            debugger
-            dispatch(upMessageActionCreator(e.currentTarget.value))
+        onChangeHandler: (e:string) => {
+            dispatch(upMessageActionCreator(e))
         },
         addMessage: (id: string) => {
-            debugger
             dispatch(addMessageActionCreator(id))
         }
     }
@@ -63,5 +54,5 @@ let mapDispatch = (dispatch: Dispatch): MDTPType => {
 
 
 
-export const SuperMessageBlockDialogContainer = connect<MSTPType, MDTPType, {}, AppStateType>(mapStateProps,mapDispatch)(MessageBlockDialog)
+export const SuperMessageBlockDialogContainer = connect<MSTPType, MDTPType, {}, AppStateType>(mapStateProps,mapDispatch)(MessageBlockDialogContainer)
 
