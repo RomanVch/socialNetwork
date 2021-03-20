@@ -1,6 +1,7 @@
 import {Dispatch} from "react";
 import {loginAPI, usersAPI} from "../apiTS/API";
 import {setPage, setUsers} from "./user-reducer";
+import {rejects} from "assert";
 
 
 const SET_USER_DATA = "SETUSERDATA"
@@ -11,15 +12,17 @@ export type authStateType = {
     email: string,
     login: string
     isAuth: any
+    serverError:any
 }
 
 let initialState = {
     id: null,
     email: null,
     login: null,
-    isAuth: false
+    isAuth: false,
+    serverError:""
 }
-
+type allActionType=AuthReducerACType|serverErrorACType
 
 export const getAuthUserData=()=>{
     return (dispath:Dispatch<any>)=>{
@@ -35,14 +38,16 @@ export const getAuthUserData=()=>{
 
 export const login=(email:string,pasword:string,rememberMe:boolean)=>{
     return (dispath:Dispatch<any>)=>{
-        debugger
+
         return    loginAPI.loginAuth(email, pasword, rememberMe)
 
-            .then(response=>{
+            .then((response)=>{
 
                 if (response.data.resultCode === 0){
-
                     dispath(getAuthUserData())
+                } else {
+                    debugger
+                    dispath(serverErrorAC(response.data.messages[0]))
                 }
             })
     }}
@@ -66,6 +71,9 @@ const authReducer = (state: any = initialState, action: any): authStateType => {
                 login:action.login,
                 isAuth: action.isAuth
             }
+        case "SERVER_ERROR":{
+                return {...state,serverError:action.serverError}
+            }
         default:
             return state
 
@@ -78,7 +86,11 @@ export const authReducerAC: AuthReducerACType = (id: number|null, email: string|
     type: SET_USER_DATA,
     id,email,login,isAuth
 })
-
+export const serverErrorAC = (serverError:string) => ({
+    type: "SERVER_ERROR",
+    serverError
+} as const)
+export type serverErrorACType = ReturnType<typeof serverErrorAC>;
 
 
 

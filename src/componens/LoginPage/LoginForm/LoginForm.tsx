@@ -2,13 +2,16 @@ import React, {useEffect} from 'react';
 import s from '../LoginPage.module.css';
 import * as yup from "yup";
 import {useFormik} from "formik";
-import {useDispatch} from "react-redux";
-import {login} from "../../../redux/auth-reducer ";
+import {useDispatch, useSelector} from "react-redux";
+import {authStateType, login, serverErrorAC} from "../../../redux/auth-reducer ";
+import {AppStateType} from "../../../redux/redux-store";
 
 
 
 export const LoginForm = (props: any) => {
 const dispatch=useDispatch()
+    debugger
+    const sererError=useSelector<AppStateType,authStateType>(state =>state.auth.serverError)
     const validationSchema = yup.object({
         login: yup.string()
             .min(2, "Мин. длинна текста 2 символа")
@@ -28,7 +31,7 @@ const dispatch=useDispatch()
         },
         validationSchema,
         onSubmit: (values, {resetForm}) => {
-            debugger
+            dispatch(serverErrorAC(""))
 dispatch(login(values.login,values.password,values.rememberMe))
             console.log(values)
             resetForm({})
@@ -39,7 +42,6 @@ dispatch(login(values.login,values.password,values.rememberMe))
     return (
 
         <form onSubmit={formik.handleSubmit} className={s.loginForm}>
-            <p>ривет</p>
             <input
                 id="login"
                 name="login"
@@ -66,6 +68,8 @@ dispatch(login(values.login,values.password,values.rememberMe))
                        onChange={() => formik.setFieldValue('rememberMe', !formik.values.rememberMe)}
 
                    /> remember me</div>
+            {sererError?<div className={s.error}>{sererError}</div>:""}
+
             <button type="submit">login</button>
         </form>
 
